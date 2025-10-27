@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <title>Атриум - Вход и регистрация</title>
+    <script>
+    function showSuccess(message) {
+        alert(message);
+    }
+    
+    // Проверка URL параметров для показа сообщения
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('message') === 'registration_success') {
+            showSuccess('Регистрация прошла успешно!');
+        }
+        if (urlParams.get('message') === 'login_success') {
+            showSuccess('Вход выполнен успешно!');
+        }
+    }
+    
+    function validateRegistration() {
+        // Явно указываем форму регистрации
+        const form = event.target;
+        const password = form.querySelector('input[name="password"]').value;
+        const confirmPassword = form.querySelector('input[name="confirm_password"]').value;
+        
+        if (password !== confirmPassword) {
+            alert('Пароли не совпадают!');
+            return false;
+        }
+        
+        // Показываем сообщение об успехе
+        showSuccess('Регистрация прошла успешно!');
+        return true;
+    }
+    
+    function validateLogin() {
+        showSuccess('Вход выполнен успешно!');
+        return true;
+    }
+</script>
+</head>
+<body>
+<!-- Шапка -->
+<table border="0" width="900" cellpadding="0" cellspacing="0" align="center" class="header">
+    <tr>
+        <td width="150" align="center">
+            <img src="..\Картинки\logo.png" alt="Логотип Атриум">
+        </td>
+        <td align="center"><h1>Атриум</h1></td>
+        <td class="form" width="270" align="right">
+            <a href="auth.html" class="login-btn">Войти</a>
+        </td>
+    </tr>
+</table>
+
+<!-- Навигация -->
+<table border="0" width="900" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <td class="nav" align="center"><a href="https://www.atrium.su/">главная</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/about/">о нас</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/specialty/services/">услуга</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/contacts/">контакты</a></td>
+    </tr>
+</table>
+
+<br>
+
+<!-- Основной контент -->
+<table border="0" width="900" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <!-- Левое меню -->
+        <td width="130" valign="top" align="center" class="left-menu">
+            <a href="..\index.html">Главная</a><br>
+            <a href="about_us.html">О нас</a><br>
+            <a href="catalog.html">Услуги</a><br>
+            <a href="contacts.html">Контакты</a><br>
+        </td>
+
+        <!-- Центральный контент -->
+        <td width="640" valign="top">
+            <h1 align="center">Вход и регистрация</h1>
+            
+            <!-- Форма авторизации -->
+            <div class="auth-form">
+                <h2>Вход в систему</h2>
+                <form method="post" onsubmit="return validateLogin()">
+                    <input type="text" name="username" placeholder="Логин или Email" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
+                    
+                    <!-- Флажок "Запомнить меня" -->
+                    <div style="margin: 10px 0;">
+                        <label><input type="checkbox" name="remember"> Запомнить меня</label>
+                    </div>
+                    
+                    <input type="submit" value="Войти">
+                    
+                    <!-- Ссылка на регистрацию -->
+                    <div style="text-align: center; margin-top: 15px;">
+                        <p>Нет аккаунта? <a href="#registration">Зарегистрируйтесь</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <hr id="registration">
+
+            <!-- Форма регистрации -->
+            <div class="auth-form">
+                <h2>Регистрация нового пользователя</h2>
+                <form method="post" onsubmit="return validateRegistration()">
+                    <!-- Основные данные -->
+                    <input type="text" name="fullname" placeholder="ФИО" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="username" placeholder="Логин" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
+                    <input type="password" name="confirm_password" placeholder="Подтвердите пароль" required>
+                    <input type="tel" name="phone" placeholder="Телефон">
+                    
+                    <!-- Радиокнопки для пола -->
+                    <div style="margin: 10px 0;">
+                        <label><input type="radio" name="gender" value="male" required> Мужской</label>
+                        <label><input type="radio" name="gender" value="female" required> Женский</label>
+                    </div>
+                    
+                    <!-- Раскрывающийся список для страны -->
+                    <select name="country" style="width: 100%; margin: 8px 0; padding: 8px;">
+                        <option value="">Выберите страну</option>
+                        <option value="ru">Россия</option>
+                        <option value="kz">Казахстан</option>
+                        <option value="by">Беларусь</option>
+                        <option value="other">Другая</option>
+                    </select>
+                    
+                    <!-- Поля для загрузки документов -->
+                    <div style="margin: 15px 0;">
+                        <h3>Загрузка документов</h3>
+
+                        <!-- Дополнительный документ -->
+                        <div style="margin: 8px 0;">
+                            <label>Дополнительный документ (водительские права, студенческий и т.д.):</label>
+                            <input type="file" name="additional_doc" accept=".jpg,.jpeg,.png,.pdf">
+                        </div>
+                        
+                        <!-- Фото профиля -->
+                        <div style="margin: 8px 0;">
+                            <label>Фото профиля:</label>
+                            <input type="file" name="profile_photo" accept=".jpg,.jpeg,.png">
+                        </div>
+                    </div>
+                    
+                    <!-- Флажки согласий -->
+                    <div style="margin: 10px 0;">
+                        <label><input type="checkbox" name="agree_terms" required> Я согласен с <a href="..\Документы\Правила_пользования.pdf">правилами пользования</a></label><br>
+                        <label><input type="checkbox" name="agree_privacy" required> Я согласен на обработку персональных данных</label><br>
+                        <label><input type="checkbox" name="newsletter"> Подписаться на новостную рассылку</label>
+                    </div>
+                    
+                    <!-- Прокручивающееся поле для дополнительной информации -->
+                    <textarea name="additional_info" placeholder="Дополнительная информация (необязательно)" rows="4"></textarea>
+                    
+                    <input type="submit" value="Зарегистрироваться">
+                </form>
+            </div>
+        </td>
+
+        <!-- Правая колонка -->
+        <td width="130" valign="top" align="center" class="right-menu">
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/banner1.jpg" alt="banner1" width="120" height="100">
+            </a>
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/banner2.png" alt="banner2" width="120" height="100">
+            </a>
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/logo.png" alt="logo" width="120" height="100">
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Атриум</h3>
+        <p>Большой современный торговый центр с четырьмя этажами: магазины, рестораны, кинотеатр.</p>
+        <p class="footer-copyright">© 2025 ТРЦ Атриум. Все права защищены.</p>
+    </div>
+</footer>
+
+</body>
+</html>

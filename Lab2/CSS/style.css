@@ -1,0 +1,367 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/*Шапка*/
+.header{
+    background-color: #8cc6e2;
+    padding: 15px;
+    border-radius: 5px;
+}
+.header h1{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+/*Форма входа*/
+.form {
+    margin: 0.3px;
+    padding: 15px;
+    border-radius: 5px;
+    border-width: 2px;
+}
+.form td {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/*Меню навигации*/
+.nav {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+.nav a {
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/*Левое поле*/
+.left-menu {
+    background-color: #8cc6e2;
+    padding: 15px;
+    border-radius: 5px;
+}
+.left-menu a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid black;
+}
+.left-menu a:last-child {
+    border-bottom: none;
+}
+
+/*Правое поле*/
+.right-menu {
+    background-color: #8cc6e2;
+    padding: 15px;
+    border-radius: 5px;
+}
+.right-menu a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid black;
+}
+.right-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Стили для списков характеристик */
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    background: url('../Картинки/logo.png') no-repeat left center;
+    background-size: 16px 16px;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+/*КАТАЛОГ*/
+.heading{
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+.short-description{
+    color:#707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+.detailed-description{
+    color:#484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+/* Стили для страницы контактов */
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.contact-form h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Стили для полей ввода */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Стили для карты */
+.map-container {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+/* Стили для контактной информации */
+.contact-info {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+/* Рамки для изображений на страницах описания */
+.image-container img {
+    border: 2px solid #8cc6e2;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+/* Стили для футера */
+.footer {
+    background-color: #8cc6e2;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer h3 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer-copyright {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Стили для радиокнопок и флажков */
+.contact-form label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.contact-form input[type="radio"],
+.contact-form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Стили для форм авторизации и регистрации */
+.auth-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.auth-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="tel"],
+.auth-form textarea,
+.auth-form select {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.auth-form textarea {
+    height: auto;
+    resize: vertical;
+}
+
+.auth-form input[type="file"] {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.auth-form input[type="submit"] {
+    background-color: #8cc6e2;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-form input[type="submit"]:hover {
+    background-color: #7ab5d2;
+}
+
+.enter-button {
+    background-color: #8cc6e2;
+    color: black;
+    border: 1px solid #5d93b0;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    margin-right: 8px;
+}
+
+.registration {
+    font-size: 11px; 
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 1px;
+}
+
+.registration:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+/* Стили для информации о товаре */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding: 0 5px;
+}
+
+.product-info a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Стили для цен товаров */
+.price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 10px;
+}
+
+/* Стили для кнопки входа в шапке */
+.login-btn {
+    background-color: #8cc6e2;
+    color: black;
+    border: 1px solid #5d93b0;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.login-btn:hover {
+    background-color: #7ab5d2;
+    border-color: #4a7a94;
+    transform: translateY(-2px);
+    color: black;
+    text-decoration: none;
+}
+
+.login-btn:active {
+    background-color: #69a4c2;
+    transform: translateY(0);
+}
