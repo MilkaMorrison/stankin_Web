@@ -1,0 +1,66 @@
+-- Создаем схему
+CREATE SCHEMA atrium;
+
+-- Устанавливаем схему по умолчанию для текущей сессии
+SET search_path TO atrium, public;
+
+-- Таблица пользователей
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    fullname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    gender VARCHAR(10),
+    country VARCHAR(50),
+    profile_photo VARCHAR(255),
+    additional_info TEXT,
+    newsletter BOOLEAN DEFAULT false,	-- подписка на новостную рассылку
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP	-- дата и время создание записи
+);
+
+-- Таблица услуг (товаров)
+CREATE TABLE services (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    alias VARCHAR(255) NOT NULL,
+    short_description TEXT NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    available BOOLEAN DEFAULT true,	-- управление доступностью услуги/товара
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица отзывов
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    service_id INTEGER REFERENCES services(id),
+    message TEXT NOT NULL,
+    rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+    priority VARCHAR(20) DEFAULT 'low',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+----------------------------------------------------------------------------------
+INSERT INTO atrium.users (fullname, email, username, password, phone, gender, country) VALUES 
+('Иван Петров', 'ivan@mail.ru', 'ivan', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '+79161234567', 'male', 'ru');
+
+INSERT INTO atrium.services (name, alias, short_description, description, price, image) VALUES
+('Brow Up!', 'brow_up', 'Профессиональная коррекция бровей', 'Полная коррекция и окрашивание бровей от профессиональных мастеров', 800.00, '../Картинки/brow_up.jpeg'),
+('Face Fit', 'face_fit', 'СПА процедуры для лица', 'Омолаживающие и очищающие процедуры для вашего лица', 1500.00, '../Картинки/face_fit.jpg'),
+('Hawaii Fitboxing', 'hawaii_fitboxing', 'Фитнес тренировки', 'Энергичные фитбокс тренировки в гавайском стиле под руководством профессиональных тренеров', 700.00, '../Картинки/hawaii.png'),
+('NIKKO', 'nikko', 'Салон химчистки', 'Премиальные салоны химчистки по комплексному уходу за Ващим гардеробом.', 2000.00, '../Картинки/nikko.jpg');
+
+select *
+from atrium.users;
+
+select *
+from atrium.services;
+
+DELETE FROM atrium.services WHERE id = 2; 
+
+select *
+from atrium.reviews;

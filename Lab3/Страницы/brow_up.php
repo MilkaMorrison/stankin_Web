@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <title>Атриум - Brow Up!</title>
+</head>
+<body>
+<!-- Шапка -->
+<table border="0" width="900" cellpadding="0" cellspacing="0" align="center" class="header">
+    <tr>
+        <td width="150" align="center">
+            <img src="..\Картинки\logo.png" alt="Логотип Атриум">
+        </td>
+        <td align="center"><h1>Атриум</h1></td>
+        <td class="form" width="270" align="right">
+            <a href="auth.php" class="login-btn">Войти</a>
+        </td>
+    </tr>
+</table>
+
+<!-- Навигация -->
+<table border="0" width="900" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <td class="nav" align="center"><a href="https://www.atrium.su/">главная</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/about/">о нас</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/specialty/services/">услуга</a></td>
+        <td class="nav" align="center"><a href="https://www.atrium.su/contacts/">контакты</a></td>
+    </tr>
+</table>
+
+<br>
+
+<!-- Основной контент -->
+<table border="0" width="900" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <!-- Левое меню -->
+        <td width="150" valign="top" align="center" class="left-menu">
+            <a href="..\index.php">Главная</a><br>
+            <a href="about_us.php">О нас</a><br>
+            <a href="catalog.php">Услуги</a><br>
+            <a href="contacts.php">Контакты</a><br>
+        </td>
+
+         <!-- Центральный контент -->
+        <td width="620" valign="top">
+            <h1 class="heading" align="center">Brow Up!</h1>
+
+            <figure style="text-align: center;">
+                <div class="image-container">
+                    <a href="..\Картинки\brow_up.jpeg" target="_blank" title="Открыть изображение Brow Up! в полном размере">
+                    <img class="zoom-image" src="..\Картинки\brow_up.jpeg" alt="Brow Up!" width="320" height="340">
+                    </a>
+                </div>
+            </figure>
+
+            <p class="detailed-description">BrowUP! — express студия по оформлению бровей, макияжа и укладки.</p>
+            
+            <p class="short-description"><b>Время работы:</b></p>
+            <p class="short-description">Каждый день с 10:00 - 23:00</p>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1122.5304638451073!2d37.65721366773242!3d55.7574437966658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a8dad5d490f%3A0x36c575ed02c23d25!2sBrow%20Up*21%20and%20Make%20Up*21!5e0!3m2!1sru!2sru!4v1759691052472!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </td>
+
+        <!-- Правая колонка -->
+        <td width="130" valign="top" align="center" class="right-menu">
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/banner1.jpg" alt="banner1" width="120" height="100">
+            </a>
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/banner2.png" alt="banner2" width="120" height="100">
+            </a>
+            <a href="https://www.atrium.su/" target="_blank" title="Перейти на официальный сайт Атриум">
+                <img src="../Картинки/logo.png" alt="logo" width="120" height="100">
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Атриум</h3>
+        <p>Большой современный торговый центр с четырьмя этажами: магазины, рестораны, кинотеатр.</p>
+        <p class="footer-copyright">© 2025 ТРЦ Атриум. Все права защищены.</p>
+    </div>
+</footer>
+
+</body>
+</html>
